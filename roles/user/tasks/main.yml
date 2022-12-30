@@ -1,0 +1,7 @@
+---
+- name: Add the user 'andre' with a specific uid and a primary group of 'adm'
+  ansible.builtin.user:
+    name: andrey
+    comment: andrey ya
+    uid: 1040
+    group: adm

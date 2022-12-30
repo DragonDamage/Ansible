@@ -1,0 +1,5 @@
+---
+- name: Creates directory
+  file:
+    path: /home/ansible/dir_ansible
+    state: directory

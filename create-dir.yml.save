@@ -1,0 +1,6 @@
+---
+#playbook
+- hosts: servers
+  roles:
+    - file_ensure
+    - 

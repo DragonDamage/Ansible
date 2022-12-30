@@ -1,0 +1,6 @@
+---
+- name: CURL simple download file
+  uri:
+    url: https://raw.githubusercontent.com/ansible/ansible/devel/README.rst
+    dest: /home/ansible/dir_ansible
+

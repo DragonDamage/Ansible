@@ -1,0 +1,5 @@
+---
+- name: Creating a file with content
+  copy:
+    dest: "/home/ansible/dir_ansible/file_ansible.txt"
+    content: 123
