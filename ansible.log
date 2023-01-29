@@ -1,0 +1,4 @@
+2023-01-29 14:08:13,315 p=104897 u=ansible n=ansible | ERROR! The requirements file '/home/ansible/l_0/roles_requirements.yml' does not exist.
+2023-01-29 14:10:28,668 p=105735 u=ansible n=ansible | Starting galaxy role install process
+2023-01-29 14:10:30,090 p=105735 u=ansible n=ansible | - extracting ansible-role-mysql to /home/ansible/l_0/external_roles/ansible-role-mysql
+2023-01-29 14:10:30,102 p=105735 u=ansible n=ansible | - ansible-role-mysql (master) was installed successfully

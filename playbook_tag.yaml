@@ -1,0 +1,9 @@
+---
+- hosts: all
+  roles:
+    - role: nginx.check
+	  tags: check
+	- role: nginx_container
+	  tags: docker
+    - { role: file_ensure, tags: [dir, init] }
+    - conf
