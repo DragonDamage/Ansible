@@ -1,0 +1,6 @@
+nginx_port: 80
+nginx_timeout: 30
+nginx_upstream_name: app
+nginx_upstream_hosts:
+  - 127.0.0.1:9000
+
