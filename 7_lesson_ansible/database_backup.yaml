@@ -1,0 +1,8 @@
+- name: Backup database (run_once)
+  become: yes
+  shell: mysqldump mydatabase > /path/to/backup.sql
+  run_once: true
+
+- name: Backup report
+  debug:
+    msg: "Database backup complete."

@@ -1,0 +1,29 @@
+- name: Check Nginx
+  become: yes
+  shell: nc -vz localhost 80
+  register: nginx_check
+  changed_when: nginx_check.rc != 0
+
+- name: Check Nginx process
+  become: yes
+  shell: ps aux | grep nginx | grep -v grep
+  register: nginx_process
+  changed_when: nginx_process.rc != 0
+
+- name: Check MySQL (using delegate_to)
+  delegate_to: localhost
+  shell: mysql --version
+  register: mysql_check
+  changed_when: mysql_check.rc != 0
+
+- name: Nginx check report
+  debug:
+    msg: "Nginx check {{ 'succeeded' if nginx_check.rc == 0 else 'failed' }}."
+
+- name: Nginx process report
+  debug:
+    msg: "Nginx process {{ 'found' if nginx_process.rc == 0 else 'not found' }}."
+
+- name: MySQL check report
+  debug:
+    msg: "MySQL check {{ 'succeeded' if mysql_check.rc == 0 else 'failed' }}."
