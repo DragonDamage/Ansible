@@ -1,0 +1,19 @@
+- name: Check MySQL variables
+  assert:
+    that:
+      - "'mysql_version' in vars"
+      - "'mysql_install_path' in vars"
+    msg: "MySQL version and installation path must be specified in the variables."
+
+- name: Install MySQL
+  become: yes
+  package:
+    name: mysql-server={{ mysql_version }}
+    state: present
+
+- name: Start MySQL service
+  become: yes
+  service:
+    name: mysql
+    state: started
+    enabled: yes
